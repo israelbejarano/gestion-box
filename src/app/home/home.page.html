@@ -15,7 +15,9 @@
         <ion-buttons slot="secondary">
             <ion-button>
                 <ion-icon slot="start" name="construct"></ion-icon>
-                <ion-icon slot="end" name="ios-list"></ion-icon>
+            </ion-button>
+            <ion-button>
+                <ion-icon slot="end" name="people"></ion-icon>
             </ion-button>
         </ion-buttons>
         <!--visible solo cuando se ha hecho login, ver tu perfil-->
@@ -26,9 +28,11 @@
         </ion-buttons>
         <!--visible siempre-->
         <ion-buttons slot="end">
-            <ion-button>
-                <ion-icon slot="start" name="log-in"></ion-icon>
-                <ion-icon slot="start" name="log-out"></ion-icon>
+            <ion-button *ngIf="!isLogin" (click)="login()">
+                <ion-icon slot="end" name="log-in"></ion-icon>
+            </ion-button>
+            <ion-button *ngIf="isLogin" (click)="logout()">
+                <ion-icon slot="end" name="log-out"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>

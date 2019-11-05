@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,11 @@ import { Component } from '@angular/core';
 export class HomePage {
   isLogin = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   login() {
     console.log('login click');
+    this.router.navigateByUrl('/login');
     this.isLogin = true;
   }
 

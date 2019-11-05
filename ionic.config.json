@@ -1,5 +1,7 @@
 {
   "name": "gestionBox",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

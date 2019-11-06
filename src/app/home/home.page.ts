@@ -22,4 +22,8 @@ export class HomePage {
     this.isLogin = false;
   }
 
+  verPerfil() {
+    this.router.navigateByUrl('/perfil-atleta');
+  }
+
 }

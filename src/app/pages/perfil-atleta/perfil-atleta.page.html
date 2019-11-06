@@ -1,7 +1,28 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>perfilAtleta</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-icon name="logo-ionic" style="margin-left: 5px" slot="start"></ion-icon>
+        <ion-title>
+            Athlete Profile
+        </ion-title>
+        <!--visible siempre el horario de las clases-->
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon slot="end" name="grid"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <!--visible solo cuando se ha hecho login, ver tu perfil-->
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon slot="end" name="person"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <!--visible siempre-->
+        <ion-buttons slot="end">
+            <ion-button (click)="logout()">
+                <ion-icon slot="end" name="log-out"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-atleta',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilAtletaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.router.navigateByUrl('/home');
+    // TODO ver como pasar variables en la navegaciones para el
+    // tema de mantener la coherencia de datos sobre todo para el header
+
+    // TODO o ver si es mejor hacer un Header global opto por esta opcion casi seguro
   }
 
 }

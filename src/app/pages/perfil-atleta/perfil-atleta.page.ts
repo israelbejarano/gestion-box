@@ -13,6 +13,10 @@ export class PerfilAtletaPage implements OnInit {
   ngOnInit() {
   }
 
+  nuevoRecord() {
+    console.log('click en nuevo record');
+  }
+
   logout() {
     this.router.navigateByUrl('/home');
     // TODO ver como pasar variables en la navegaciones para el

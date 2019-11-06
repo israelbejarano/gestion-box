@@ -26,5 +26,36 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-card>
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button color="danger" (click)="nuevoRecord()">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+        <img style="width: 100px; height: 100px;" src="/assets/avatar.png">
+        <ion-card-header>
+            <ion-card-title>Matt Frasser</ion-card-title>
+            <ion-card-subtitle>Tipo de tarifa: nombre de la tarifa</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-label>Sentadilla</ion-label>
+                    <ion-badge color="primary" mode="ios">150kg</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Peso Muerto</ion-label>
+                    <ion-badge color="primary" mode="ios">220kg</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Murph</ion-label>
+                    <ion-badge color="primary" mode="ios">45'</ion-badge>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Fran</ion-label>
+                    <ion-badge color="primary" mode="ios">2'11''</ion-badge>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

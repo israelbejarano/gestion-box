@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil-atleta',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PerfilAtletaPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
@@ -25,8 +26,13 @@ export class PerfilAtletaPage implements OnInit {
     console.log('click ver reservas');
   }
 
-  nuevoBenchmark() {
-    console.log('click en nuevo benchmark');
+  async nuevoBenchmark() {
+    console.log('clik en nuevo benchmark');
+    // TODO modal controler y esto habre un componente propio ver el ejemplo oficial de ionic
+    /* const modal = await this.modalCtrl.create({
+      component: NuevoBenchmarkUsuarioPage
+    });
+    await modal.present(); */
   }
 
   verHistoricosBenchmark() {

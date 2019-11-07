@@ -13,8 +13,24 @@ export class PerfilAtletaPage implements OnInit {
   ngOnInit() {
   }
 
-  nuevoRecord() {
-    console.log('click en nuevo record');
+  verOpciones() {
+    console.log('click en opciones');
+  }
+
+  editarPerfil() {
+    console.log('click en editar perfil');
+  }
+
+  verReservas() {
+    console.log('click ver reservas');
+  }
+
+  nuevoBenchmark() {
+    console.log('click en nuevo benchmark');
+  }
+
+  verHistoricosBenchmark() {
+    console.log('click en ver historicos de benchmarks');
   }
 
   logout() {

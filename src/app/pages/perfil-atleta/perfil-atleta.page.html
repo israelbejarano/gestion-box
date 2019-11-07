@@ -28,9 +28,25 @@
 <ion-content>
     <ion-card>
         <ion-fab vertical="top" horizontal="end" slot="fixed">
-            <ion-fab-button color="danger" (click)="nuevoRecord()">
+            <ion-fab-button color="danger" (click)="verOpciones()">
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
+            <ion-fab-list side="start">
+                <ion-fab-button color="primary" (click)="editarPerfil()">
+                    <ion-icon name="create"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list>
+                <ion-fab-button color="success" (click)="verReservas()">
+                    <ion-icon name="calendar"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="tertiary" (click)="nuevoBenchmark()">
+                    <ion-icon name="medal"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="medium" (click)="verHistoricosBenchmark()">
+                    <ion-icon name="stats"></ion-icon>
+                </ion-fab-button>
+            </ion-fab-list>
         </ion-fab>
         <img style="width: 100px; height: 100px;" src="/assets/avatar.png">
         <ion-card-header>

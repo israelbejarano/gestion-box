@@ -8,32 +8,62 @@ import { ModalController } from '@ionic/angular';
 })
 export class UsuarioBenchmarkComponent implements OnInit {
 
-  fechaNewBenchmark: Date = new Date();
-  customPickerOptions: any;
+  pesoSel: number;
+  minutos: number;
+  segundos: number;
+  fechaBenchamark: Date;
+  benchmarkSel = {
+    id: '',
+    nombre: ''
+  };
+  benchmarks = [
+    {
+      id: 1,
+      nombre: 'Murph'
+    },
+    {
+      id: 2,
+      nombre: 'Fran'
+    },
+    {
+      id: 3,
+      nombre: 'Cindy'
+    },
+    {
+      id: 4,
+      nombre: 'Diane'
+    },
+    {
+      id: 5,
+      nombre: 'Press Banca'
+    },
+    {
+      id: 6,
+      nombre: 'Sentadilla'
+    },
+    {
+      id: 7,
+      nombre: 'Peso muerto'
+    }
+  ];
 
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.customPickerOptions = {
-      buttons: [{
-        text: 'Save',
-        handler: (evento) => {
-          console.log('Clicked Save!');
-          console.log(evento);
-        }
-      }, {
-        text: 'Log',
-        handler: () => {
-          console.log('Clicked Log. Do not Dismiss.');
-          return false;
-        }
-      }]
-    };
+
   }
 
   cambioFecha(event) {
     console.log('ionchange', event);
-    console.log('Date', new Date(event.detail.value));
+    this.fechaBenchamark = new Date(event.detail.value);
+    console.log('fecha benchmark', this.fechaBenchamark);
+  }
+  guardar() {
+    console.log('benchmark', this.benchmarkSel);
+    console.log('peso:', this.pesoSel);
+    console.log('minutos:', this.minutos);
+    console.log('segundos:', this.segundos);
+    console.log('fecha benchmark', this.fechaBenchamark);
   }
 
   salir() {

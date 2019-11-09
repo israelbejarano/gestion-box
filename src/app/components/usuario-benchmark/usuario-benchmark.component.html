@@ -1,10 +1,37 @@
-<p>
-    usuario-benchmark works!
-</p>
-<ion-item>
-    <ion-label>Fecha del nuevo Benchmark</ion-label>
-    <ion-datetime placeholder="Nuevo Benchmark" display-format="YYYY MM DD" cancelText="Cancelar" [ngModel]="fechaNewBenchmark.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
-</ion-item>
+<ion-list>
+    <ion-list-header>
+        <ion-label>Nuevo Benchmark</ion-label>
+    </ion-list-header>
+    <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-select [(ngModel)]="benchmarkSel" ok-text="Ok" cancel-text="Cancelar">
+            <ion-select-option [value]="benchmark" *ngFor="let benchmark of benchmarks">{{benchmark.nombre}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Peso</ion-label>
+        <ion-input [(ngModel)]="pesoSel" type="number" placeholder="0.00 kg"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Tiempo</ion-label>
+        <ion-row>
+            <ion-col>
+                <ion-label position="floating">Minutos</ion-label>
+                <ion-input [(ngModel)]="minutos" type="number" placeholder="00"></ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-label position="floating">Segundos</ion-label>
+                <ion-input [(ngModel)]="segundos" type="number" placeholder="00"></ion-input>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-label>Fecha del nuevo Benchmark</ion-label>
+        <ion-datetime placeholder="Fecha de realización" doneText="Ok" cancelText="Cancelar" display-format="DD/MM/YYYY" (ionChange)="cambioFecha($event)"></ion-datetime>
+    </ion-item>
+</ion-list>
+
+
 <!-- ion-row + ion-col -->
 <ion-row class="top-20">
     <ion-col>
@@ -13,7 +40,7 @@
         </ion-button>
     </ion-col>
     <ion-col>
-        <ion-button expand="full" color="primary">
+        <ion-button [disabled]="!fechaBenchamark? '':null && !benchmarkSel ? '':null" expand="full" color="primary" (click)="guardar()">
             <ion-icon name="save" style="margin-right: 3px;"></ion-icon> Guardar</ion-button>
     </ion-col>
 </ion-row>

@@ -5,6 +5,15 @@
     <ion-label>Fecha del nuevo Benchmark</ion-label>
     <ion-datetime placeholder="Nuevo Benchmark" display-format="YYYY MM DD" cancelText="Cancelar" [ngModel]="fechaNewBenchmark.toISOString()" (ionChange)="cambioFecha($event)"></ion-datetime>
 </ion-item>
-<ion-button color="danger" (click)="salir()">
-    Salir
-</ion-button>
+<!-- ion-row + ion-col -->
+<ion-row class="top-20">
+    <ion-col>
+        <ion-button expand="full" color="danger" (click)="salir()">
+            <ion-icon name="backspace" style="margin-right: 3px;"></ion-icon> Salir
+        </ion-button>
+    </ion-col>
+    <ion-col>
+        <ion-button expand="full" color="primary">
+            <ion-icon name="save" style="margin-right: 3px;"></ion-icon> Guardar</ion-button>
+    </ion-col>
+</ion-row>

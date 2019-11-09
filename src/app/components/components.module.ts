@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { UsuarioBenchmarkComponent } from './usuario-benchmark/usuario-benchmark.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { UsuarioBenchmarkComponent } from './usuario-benchmark/usuario-benchmark
   declarations: [UsuarioBenchmarkComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ],
   entryComponents:[UsuarioBenchmarkComponent],
   exports: [

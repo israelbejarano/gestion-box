@@ -14,16 +14,7 @@
     </ion-item>
     <ion-item>
         <ion-label>Tiempo</ion-label>
-        <ion-row>
-            <ion-col>
-                <ion-label position="floating">Minutos</ion-label>
-                <ion-input [(ngModel)]="minutos" type="number" placeholder="00"></ion-input>
-            </ion-col>
-            <ion-col>
-                <ion-label position="floating">Segundos</ion-label>
-                <ion-input [(ngModel)]="segundos" type="number" placeholder="00"></ion-input>
-            </ion-col>
-        </ion-row>
+        <ion-input [(ngModel)]="tiempo" type="number" placeholder="00.00"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>Fecha del nuevo Benchmark</ion-label>

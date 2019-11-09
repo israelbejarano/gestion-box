@@ -9,8 +9,7 @@ import { ModalController } from '@ionic/angular';
 export class UsuarioBenchmarkComponent implements OnInit {
 
   pesoSel: number;
-  minutos: number;
-  segundos: number;
+  tiempo: number;
   fechaBenchamark: Date;
   benchmarkSel = {
     id: '',
@@ -61,8 +60,7 @@ export class UsuarioBenchmarkComponent implements OnInit {
   guardar() {
     console.log('benchmark', this.benchmarkSel);
     console.log('peso:', this.pesoSel);
-    console.log('minutos:', this.minutos);
-    console.log('segundos:', this.segundos);
+    console.log('tiempo:', this.tiempo);
     console.log('fecha benchmark', this.fechaBenchamark);
   }
 

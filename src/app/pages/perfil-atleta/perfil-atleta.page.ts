@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { UsuarioBenchmarkComponent } from '../../components/usuario-benchmark/usuario-benchmark.component';
 
 @Component({
   selector: 'app-perfil-atleta',
@@ -28,11 +29,17 @@ export class PerfilAtletaPage implements OnInit {
 
   async nuevoBenchmark() {
     console.log('clik en nuevo benchmark');
-    // TODO modal controler y esto habre un componente propio ver el ejemplo oficial de ionic
-    /* const modal = await this.modalCtrl.create({
-      component: NuevoBenchmarkUsuarioPage
+    const modal = await this.modalCtrl.create({
+      component: UsuarioBenchmarkComponent,
+      componentProps: {
+        nombre: 'Israel',
+        pais: 'España'
+      },
+      backdropDismiss: false
     });
-    await modal.present(); */
+    await modal.present();
+    const {data} = await modal.onDidDismiss();
+    console.log('El modal ha devuelto: ', data);
   }
 
   verHistoricosBenchmark() {

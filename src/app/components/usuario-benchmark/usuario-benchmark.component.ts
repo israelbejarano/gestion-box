@@ -8,9 +8,33 @@ import { ModalController } from '@ionic/angular';
 })
 export class UsuarioBenchmarkComponent implements OnInit {
 
+  fechaNewBenchmark: Date = new Date();
+  customPickerOptions: any;
+
   constructor(private modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.customPickerOptions = {
+      buttons: [{
+        text: 'Save',
+        handler: (evento) => {
+          console.log('Clicked Save!');
+          console.log(evento);
+        }
+      }, {
+        text: 'Log',
+        handler: () => {
+          console.log('Clicked Log. Do not Dismiss.');
+          return false;
+        }
+      }]
+    };
+  }
+
+  cambioFecha(event) {
+    console.log('ionchange', event);
+    console.log('Date', new Date(event.detail.value));
+  }
 
   salir() {
     this.modalCtrl.dismiss();

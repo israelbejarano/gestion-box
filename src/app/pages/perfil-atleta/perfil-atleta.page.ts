@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { UsuarioBenchmarkComponent } from '../../components/usuario-benchmark/usuario-benchmark.component';
+import { ReservasUsuarioComponent } from '../../components/reservas-usuario/reservas-usuario.component';
 
 @Component({
   selector: 'app-perfil-atleta',
@@ -23,8 +24,18 @@ export class PerfilAtletaPage implements OnInit {
     console.log('click en editar perfil');
   }
 
-  verReservas() {
+  async verReservas() {
     console.log('click ver reservas');
+    const modal = await this.modalCtrl.create({
+      component: ReservasUsuarioComponent,
+      componentProps: {
+        nombre: 'Israel',
+        apellido: 'Bejarano'
+      }
+    });
+    await modal.present();
+    const {data} = await modal.onDidDismiss();
+    console.log('El modal ha devuelto: ', data);
   }
 
   async nuevoBenchmark() {
